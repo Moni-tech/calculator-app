@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1f1c2c, #0f0c29);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Glass + depth */
+.calculator {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(25px);
+  border-radius: 24px;
+  padding: 25px;
+  width: 320px;
+  box-shadow: 
+    0 20px 60px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Display */
+#display {
+  width: 100%;
+  height: 70px;
+  font-size: 28px;
+  text-align: right;
+  padding: 15px;
+  border: none;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  margin-bottom: 20px;
+  outline: none;
+  letter-spacing: 1px;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* Buttons grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+/* Base button */
+button {
+  height: 60px;
+  font-size: 18px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.25s ease;
+  
+  background: linear-gradient(145deg, #1e1e2f, #2a2a40);
+  box-shadow: 
+    5px 5px 12px rgba(0,0,0,0.6),
+    -5px -5px 10px rgba(255,255,255,0.05);
+}
+
+/* Hover = glow */
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 0 12px rgba(255,255,255,0.15),
+    5px 5px 15px rgba(0,0,0,0.7);
+}
+
+/* Click = press effect */
+button:active {
+  transform: scale(0.96);
+  box-shadow: inset 2px 2px 6px rgba(0,0,0,0.8);
+}
+
+/* Special buttons */
+#ac {
+  background: linear-gradient(145deg, #ff4b2b, #ff416c);
+  box-shadow: 0 0 12px rgba(255,75,43,0.5);
+}
+
+#equals {
+  background: linear-gradient(145deg, #00c853, #00e676);
+  box-shadow: 0 0 12px rgba(0,200,83,0.5);
+}
+
+/* Operators styling */
+button:nth-child(2),
+button:nth-child(3),
+button:nth-child(4),
+button:nth-child(8),
+button:nth-child(12),
+button:nth-child(16) {
+  color: #00e5ff;
+}
+
+/* Zero spans 2 */
+.zero {
+  grid-column: span 2;
+}
